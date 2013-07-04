@@ -106,5 +106,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export PATH=$PATH:$HOME/bin
-alias vim='vim -c ":Unite file_mru"'
+export PATH=$PATH:$HOME/bin:$HOME/src/google_appengine
+export IP=`LANG=C;ifconfig eth0 | sed -n '/^lo/,/^$/d; /.*inet addr:\([0-9.]*\).*Mask:\([0-9.]*\)/{s//\1/;p;q}'`
+#alias vim='vim -c ":Unite file_mru"'
